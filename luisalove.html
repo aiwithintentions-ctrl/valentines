@@ -1,905 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day Luisa ❤️</title>
+    <title>Para Luisa ❤️</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;500&display=swap');
+
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff8fa3;
+            --bg: #fff0f3;
+            --text: #590d22;
         }
 
         body {
-            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             overflow-x: hidden;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            padding: 20px;
-        }
-
-        .card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            border-radius: 30px;
-            padding: 60px 40px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            animation: cardEntrance 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        @keyframes cardEntrance {
-            0% {
-                transform: scale(0) rotate(-10deg);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-            }
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.1), 
-                transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3.5em;
-            color: white;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-            margin-bottom: 20px;
-            animation: heartbeat 2s infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            10%, 30% { transform: scale(1.1); }
-            20%, 40% { transform: scale(1); }
-        }
-
-        .name {
-            font-size: 4em;
-            color: #fff700;
-            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
-            margin: 20px 0;
-            font-weight: bold;
-            animation: glow 2s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { 
-                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5),
-                             0 0 20px rgba(255, 247, 0, 0.5); 
-            }
-            50% { 
-                text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5),
-                             0 0 40px rgba(255, 247, 0, 0.8),
-                             0 0 60px rgba(255, 247, 0, 0.6); 
-            }
-        }
-
-        .message {
-            font-size: 1.4em;
-            color: white;
-            line-height: 1.8;
-            margin: 30px 0;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 2s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .heart-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .heart {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            opacity: 0;
-            animation: floatHeart 8s infinite;
-        }
-
-        .heart::before,
-        .heart::after {
-            content: "";
-            position: absolute;
-            width: 15px;
-            height: 24px;
-            background: rgba(255, 100, 150, 0.8);
-            border-radius: 15px 15px 0 0;
-        }
-
-        .heart::before {
-            left: 15px;
-            transform: rotate(-45deg);
-            transform-origin: 0 100%;
-        }
-
-        .heart::after {
-            left: 0;
-            transform: rotate(45deg);
-            transform-origin: 100% 100%;
-        }
-
-        @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) scale(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) scale(1.5) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .rose-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
-            animation: roseGrow 2s ease-out;
-        }
-
-        @keyframes roseGrow {
-            0% {
-                transform: scale(0) translateY(50px);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1) translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .rose {
-            font-size: 4em;
-            animation: sway 3s ease-in-out infinite;
-        }
-
-        .rose:nth-child(1) { animation-delay: 0s; }
-        .rose:nth-child(2) { animation-delay: 0.5s; }
-        .rose:nth-child(3) { animation-delay: 1s; }
-
-        @keyframes sway {
-            0%, 100% { transform: rotate(-5deg); }
-            50% { transform: rotate(5deg); }
-        }
-
-        .sparkle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            animation: sparkle 1.5s infinite;
-            box-shadow: 0 0 10px white;
-        }
-
-        @keyframes sparkle {
-            0%, 100% {
-                opacity: 0;
-                transform: scale(0);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .love-declaration {
-            font-size: 2em;
-            color: #fff;
-            font-weight: bold;
-            margin-top: 30px;
-            animation: pulse 2s infinite;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        .particle {
-            position: fixed;
-            width: 6px;
-            height: 6px;
-            background: white;
-            border-radius: 50%;
-            pointer-events: none;
-            animation: particleFloat 4s infinite;
-            opacity: 0;
-        }
-
-        @keyframes particleFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(0) translateX(0);
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-200px) translateX(50px);
-            }
-        }
-
-        .envelope {
-            font-size: 5em;
-            margin: 20px 0;
-            animation: envelopeShake 2s infinite;
-        }
-
-        @keyframes envelopeShake {
-            0%, 100% { transform: rotate(-3deg); }
-            50% { transform: rotate(3deg); }
-        }
-
-        .subtitle {
-            font-size: 1.2em;
-            color: rgba(255, 255, 255, 0.9);
-            font-style: italic;
-            margin-top: 20px;
-            animation: fadeIn 3s ease-out;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .gallery-section {
-            margin-top: 50px;
-            padding-top: 40px;
-            border-top: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .gallery-title {
-            font-size: 2.5em;
-            color: white;
-            margin-bottom: 30px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 2s;
-        }
-
-        .gallery-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-            aspect-ratio: 4/3;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .photo-upload-area {
-            width: 100%;
-            height: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
-            border: 3px dashed rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            min-height: 100vh;
         }
 
-        .photo-upload-area:hover {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
-            border-color: white;
-            transform: scale(1.02);
-        }
-
-        .upload-icon {
-            font-size: 4em;
-            margin-bottom: 20px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .upload-text {
-            color: white;
-            font-size: 1.3em;
-            text-align: center;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .gallery-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
+        .hearts-bg {
+            position: fixed;
             top: 0;
             left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        .gallery-image.active {
-            opacity: 1;
-        }
-
-        .gallery-controls {
+        .heart-anim {
             position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 15px;
-            z-index: 10;
+            bottom: -100px;
+            font-size: 20px;
+            color: rgba(255, 77, 109, 0.4);
+            animation: floatUp 10s linear infinite;
         }
 
-        .gallery-btn {
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
         }
 
-        .gallery-btn:hover {
-            background: white;
-            transform: scale(1.1);
+        .container {
+            z-index: 1;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            padding: 2rem 0;
         }
 
-        .gallery-dots {
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+        }
+
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 2rem;
+        }
+
+        .card-stack {
+            position: relative;
+            height: 350px;
+            width: 100%;
+            margin: 0 auto 3rem auto;
+            perspective: 1000px;
+        }
+
+        .card {
             position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-            z-index: 10;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
+            width: 100%;
+            height: 100%;
             background: white;
-            transform: scale(1.3);
-        }
-
-        .music-player {
-            margin-top: 40px;
-            padding: 25px;
-            background: rgba(255, 255, 255, 0.2);
             border-radius: 20px;
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 2.5s;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-sizing: border-box;
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s;
+            cursor: pointer;
+            backface-visibility: hidden;
+            border: 4px solid var(--bg);
         }
 
-        .music-title {
-            font-size: 1.5em;
-            color: white;
+        .card h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-family: 'Dancing Script', cursive;
         }
 
-        .music-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+        .card p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            font-weight: 500;
         }
 
-        .music-btn {
-            background: white;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.8em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .card:nth-last-child(n+2) {
+            transform: scale(0.95) translateY(10px);
+            opacity: 0.8;
+            z-index: -1;
         }
-
-        .music-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .music-btn.playing {
-            animation: musicPulse 1s infinite;
-        }
-
-        @keyframes musicPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        .volume-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .volume-slider {
-            width: 100px;
-            height: 6px;
-            border-radius: 3px;
-            background: rgba(255, 255, 255, 0.3);
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: white;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .upload-music-btn {
-            background: rgba(255, 255, 255, 0.9);
-            color: #f5576c;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            margin-top: 15px;
-        }
-
-        .upload-music-btn:hover {
-            background: white;
-            transform: scale(1.05);
-        }
-
-        .photo-counter {
+        
+        .btn-love {
+            background: var(--primary);
             color: white;
-            font-size: 1em;
-            margin-top: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            transition: transform 0.2s;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
         }
 
-        .hidden {
+        .btn-love:hover {
+            transform: scale(1.05);
+            background: var(--secondary);
+        }
+
+        .final-message {
             display: none;
+            margin-top: 2rem;
+            animation: fadeIn 2s;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5em; }
-            .name { font-size: 3em; }
-            .message { font-size: 1.1em; }
-            .card { padding: 40px 20px; }
-            .gallery-title { font-size: 2em; }
-            .music-btn { width: 50px; height: 50px; font-size: 1.5em; }
+        /* ESTILO DE LA FOTO */
+        .my-photo {
+            width: 250px;            /* Tamaño de la foto */
+            height: auto;
+            border-radius: 15px;     /* Bordes redondeados */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 20px auto;
+            display: block;
+            border: 4px solid white;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .signature {
+            margin-top: 50px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: var(--text);
+        }
+
     </style>
 </head>
 <body>
-    <div class="heart-container" id="heartContainer"></div>
-    
+
+    <div class="hearts-bg" id="hearts-container"></div>
+
     <div class="container">
-        <div class="card">
-            <div class="content">
-                <div class="envelope">💌</div>
-                <h1>Happy Valentine's Day</h1>
-                <div class="name">LUISA</div>
-                
-                <div class="rose-container">
-                    <div class="rose">🌹</div>
-                    <div class="rose">🌹</div>
-                    <div class="rose">🌹</div>
-                </div>
-                
-                <div class="message">
-                    Every moment with you feels like a beautiful dream come true.
-                    You light up my world with your smile and fill my heart with endless joy.
-                    Thank you for being the most amazing person in my life.
-                </div>
-                
-                <div class="love-declaration">
-                    I Love You More Every Day! ❤️
-                </div>
-                
-                <div class="subtitle">
-                    Forever yours, this Valentine's Day and always...
-                </div>
+        <h1>¡Feliz San Valentín!</h1>
+        <p class="subtitle">Toca las cartas para descubrir mis razones</p>
 
-                <!-- Photo Gallery Section -->
-                <div class="gallery-section">
-                    <div class="gallery-title">Our Beautiful Memories 📸</div>
-                    
-                    <div class="gallery-container" id="galleryContainer">
-                        <div class="photo-upload-area" id="uploadArea">
-                            <div class="upload-icon">📷</div>
-                            <div class="upload-text">
-                                Click here to add our special photos<br>
-                                <small>(Upload multiple photos)</small>
-                            </div>
-                        </div>
-                        <div class="gallery-dots" id="galleryDots"></div>
-                        <div class="gallery-controls hidden" id="galleryControls">
-                            <button class="gallery-btn" id="prevBtn">←</button>
-                            <button class="gallery-btn" id="playPauseBtn">⏸</button>
-                            <button class="gallery-btn" id="nextBtn">→</button>
-                        </div>
-                    </div>
-                    <div class="photo-counter" id="photoCounter"></div>
-                    <input type="file" id="photoInput" accept="image/*" multiple class="hidden">
-                </div>
-
-                <!-- Music Player Section -->
-                <div class="music-player">
-                    <div class="music-title">🎵 Our Love Song</div>
-                    <div class="music-controls">
-                        <button class="music-btn" id="musicPlayBtn">▶️</button>
-                        <div class="volume-control">
-                            <span style="color: white;">🔊</span>
-                            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
-                        </div>
-                    </div>
-                    <button class="upload-music-btn" id="uploadMusicBtn">Upload Your Favorite Song 🎶</button>
-                    <input type="file" id="musicInput" accept="audio/*" class="hidden">
-                    <div class="photo-counter" id="musicName"></div>
-                </div>
+        <div class="card-stack" id="card-stack">
             </div>
+
+        <div id="final-section" class="final-message">
+            <h1>Te Amo, Luisa ❤️</h1>
+            
+            <p style="font-size: 1.2rem; margin-bottom: 10px;">
+                Gracias por hacer mi vida mucho más feliz.
+            </p>
+
+            <img src="foto.jpg" alt="Nosotros" class="my-photo">
+            <button class="btn-love" onclick="restart()">Leer de nuevo</button>
+        </div>
+
+        <div class="signature">
+            Con mucho amor,<br>Ayush
         </div>
     </div>
 
     <script>
-        // Photo Gallery Variables
-        let photos = [];
-        let currentPhotoIndex = 0;
-        let slideshowInterval;
-        let isPlaying = false;
+        const razones = [
+            "Tu sonrisa ilumina todo mi mundo.",
+            "Me inspiras a ser mejor cada día.",
+            "Me encanta descubrir México contigo.",
+            "Eres inteligente, hermosa y única.",
+            "No importa dónde estemos, tú eres mi hogar.",
+            "Luisa, eres simplemente perfecta para mí."
+        ];
 
-        // Music Player Variables
-        let audioPlayer = new Audio();
-        let isMusicPlaying = false;
+        const stack = document.getElementById('card-stack');
+        const finalSection = document.getElementById('final-section');
+        let currentIndex = 0;
 
-        // Create floating hearts
+        function initCards() {
+            stack.innerHTML = '';
+            finalSection.style.display = 'none';
+            stack.style.display = 'block';
+            currentIndex = 0;
+
+            [...razones].reverse().forEach((texto, i) => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                const num = razones.length - i;
+                
+                card.innerHTML = `
+                    <h2>Razón #${num}</h2>
+                    <p>${texto}</p>
+                `;
+                card.onclick = () => swipeCard(card);
+                stack.appendChild(card);
+            });
+        }
+
+        function swipeCard(card) {
+            const randomRotate = Math.random() * 20 - 10;
+            card.style.transform = `translateX(150vw) rotate(${20 + randomRotate}deg)`;
+            card.style.opacity = '0';
+            currentIndex++;
+
+            if (currentIndex === razones.length) {
+                setTimeout(() => {
+                    stack.style.display = 'none';
+                    finalSection.style.display = 'block';
+                    launchConfetti();
+                }, 300);
+            }
+        }
+
+        function restart() {
+            initCards();
+        }
+
         function createHeart() {
             const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.style.left = Math.random() * 100 + '%';
-            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
-            heart.style.animationDelay = Math.random() * 2 + 's';
-            document.getElementById('heartContainer').appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 8000);
+            heart.classList.add('heart-anim');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 7 + 's';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            document.getElementById('hearts-container').appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 10000);
         }
 
-        // Generate hearts continuously
         setInterval(createHeart, 400);
 
-        // Create sparkles
-        function createSparkles() {
-            const card = document.querySelector('.card');
-            for (let i = 0; i < 20; i++) {
-                const sparkle = document.createElement('div');
-                sparkle.className = 'sparkle';
-                sparkle.style.left = Math.random() * 100 + '%';
-                sparkle.style.top = Math.random() * 100 + '%';
-                sparkle.style.animationDelay = Math.random() * 1.5 + 's';
-                card.appendChild(sparkle);
+        function launchConfetti() {
+            for(let i=0; i<30; i++) {
+                setTimeout(createHeart, i * 100);
             }
         }
 
-        createSparkles();
-
-        // Create particle effects
-        function createParticles() {
-            for (let i = 0; i < 30; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 4 + 's';
-                document.body.appendChild(particle);
-            }
-        }
-
-        createParticles();
-
-        // Add interactive click effect
-        document.addEventListener('click', (e) => {
-            const burst = 5;
-            for (let i = 0; i < burst; i++) {
-                const heart = document.createElement('div');
-                heart.className = 'heart';
-                heart.style.left = e.clientX + 'px';
-                heart.style.top = e.clientY + 'px';
-                heart.style.position = 'fixed';
-                heart.style.animationDuration = '2s';
-                document.body.appendChild(heart);
-                
-                setTimeout(() => {
-                    heart.remove();
-                }, 2000);
-            }
-        });
-
-        // Add 3D tilt effect on mouse move
-        const card = document.querySelector('.card');
-        document.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        });
-
-        document.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-        });
-
-        // PHOTO GALLERY FUNCTIONALITY
-        const uploadArea = document.getElementById('uploadArea');
-        const photoInput = document.getElementById('photoInput');
-        const galleryContainer = document.getElementById('galleryContainer');
-        const photoCounter = document.getElementById('photoCounter');
-        const galleryControls = document.getElementById('galleryControls');
-        const galleryDots = document.getElementById('galleryDots');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-
-        uploadArea.addEventListener('click', () => {
-            photoInput.click();
-        });
-
-        photoInput.addEventListener('change', (e) => {
-            const files = Array.from(e.target.files);
-            if (files.length > 0) {
-                files.forEach(file => {
-                    const reader = new FileReader();
-                    reader.onload = (event) => {
-                        photos.push(event.target.result);
-                        if (photos.length === 1) {
-                            displayPhotos();
-                        }
-                        updatePhotoCounter();
-                        updateDots();
-                    };
-                    reader.readAsDataURL(file);
-                });
-            }
-        });
-
-        function displayPhotos() {
-            if (photos.length === 0) return;
-
-            uploadArea.classList.add('hidden');
-            galleryControls.classList.remove('hidden');
-            
-            // Clear existing images
-            const existingImages = galleryContainer.querySelectorAll('.gallery-image');
-            existingImages.forEach(img => img.remove());
-
-            // Add all photos
-            photos.forEach((photo, index) => {
-                const img = document.createElement('img');
-                img.src = photo;
-                img.className = 'gallery-image';
-                if (index === currentPhotoIndex) {
-                    img.classList.add('active');
-                }
-                galleryContainer.appendChild(img);
-            });
-
-            startSlideshow();
-        }
-
-        function showPhoto(index) {
-            const images = galleryContainer.querySelectorAll('.gallery-image');
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-            });
-            currentPhotoIndex = index;
-            updateDots();
-        }
-
-        function nextPhoto() {
-            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
-            showPhoto(currentPhotoIndex);
-        }
-
-        function prevPhoto() {
-            currentPhotoIndex = (currentPhotoIndex - 1 + photos.length) % photos.length;
-            showPhoto(currentPhotoIndex);
-        }
-
-        function startSlideshow() {
-            if (isPlaying) return;
-            isPlaying = true;
-            playPauseBtn.textContent = '⏸';
-            slideshowInterval = setInterval(nextPhoto, 3000);
-        }
-
-        function pauseSlideshow() {
-            isPlaying = false;
-            playPauseBtn.textContent = '▶️';
-            clearInterval(slideshowInterval);
-        }
-
-        function toggleSlideshow() {
-            if (isPlaying) {
-                pauseSlideshow();
-            } else {
-                startSlideshow();
-            }
-        }
-
-        function updatePhotoCounter() {
-            if (photos.length > 0) {
-                photoCounter.textContent = `${photos.length} beautiful ${photos.length === 1 ? 'memory' : 'memories'} 💕`;
-            }
-        }
-
-        function updateDots() {
-            galleryDots.innerHTML = '';
-            photos.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.className = 'dot';
-                if (index === currentPhotoIndex) {
-                    dot.classList.add('active');
-                }
-                dot.addEventListener('click', () => {
-                    showPhoto(index);
-                    pauseSlideshow();
-                });
-                galleryDots.appendChild(dot);
-            });
-        }
-
-        prevBtn.addEventListener('click', () => {
-            prevPhoto();
-            pauseSlideshow();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            nextPhoto();
-            pauseSlideshow();
-        });
-
-        playPauseBtn.addEventListener('click', toggleSlideshow);
-
-        // MUSIC PLAYER FUNCTIONALITY
-        const musicPlayBtn = document.getElementById('musicPlayBtn');
-        const volumeSlider = document.getElementById('volumeSlider');
-        const uploadMusicBtn = document.getElementById('uploadMusicBtn');
-        const musicInput = document.getElementById('musicInput');
-        const musicName = document.getElementById('musicName');
-
-        uploadMusicBtn.addEventListener('click', () => {
-            musicInput.click();
-        });
-
-        musicInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) {
-                const url = URL.createObjectURL(file);
-                audioPlayer.src = url;
-                audioPlayer.volume = volumeSlider.value / 100;
-                musicName.textContent = `🎵 ${file.name}`;
-                musicPlayBtn.textContent = '▶️';
-                isMusicPlaying = false;
-            }
-        });
-
-        musicPlayBtn.addEventListener('click', () => {
-            if (!audioPlayer.src) {
-                alert('Please upload a song first! 🎵');
-                return;
-            }
-
-            if (isMusicPlaying) {
-                audioPlayer.pause();
-                musicPlayBtn.textContent = '▶️';
-                musicPlayBtn.classList.remove('playing');
-            } else {
-                audioPlayer.play();
-                musicPlayBtn.textContent = '⏸';
-                musicPlayBtn.classList.add('playing');
-            }
-            isMusicPlaying = !isMusicPlaying;
-        });
-
-        volumeSlider.addEventListener('input', (e) => {
-            audioPlayer.volume = e.target.value / 100;
-        });
-
-        // Loop the music
-        audioPlayer.addEventListener('ended', () => {
-            audioPlayer.currentTime = 0;
-            audioPlayer.play();
-        });
+        initCards();
     </script>
 </body>
 </html>
